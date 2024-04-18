@@ -4,11 +4,13 @@
         <meta charset="UTF-8" />
         <link rel="icon" type="image/svg+xml" href="/walterhouse.svg" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="src/scss/style.scss" />
         <title>Walter House</title>
     </head>
     <body>
-        <!-- @@include('html/modules/header.html') -->
-        <load src="src/html/screen-one.html" />
+        <!-- <load src="src/html/main/screen-first.html"></load> -->
+        {{>main/screen-first}}
+        {{>main/screen-second}}
         <script type="module" src="/main.js"></script>
     </body>
 </html>
