@@ -1,0 +1,8 @@
+@use '@/scss/config/reset.scss';
+@use '@/scss/config/media-breakpoints';
+@use '@/scss/config/vars.scss';
+@use '@/scss/config/fonts.scss';
+
+body {
+  background-color: black;
+}
