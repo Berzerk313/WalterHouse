@@ -1,8 +1,13 @@
-@use '@/scss/config/reset.scss';
-@use '@/scss/config/media-breakpoints';
-@use '@/scss/config/vars.scss';
-@use '@/scss/config/fonts.scss';
+@use '@/scss/config' as *;
+@use '@/scss/config/reset';
+// @use '@/scss/config/media-breakpoints';
+// @use '@/scss/config/vars';
+// @use '@/scss/config/fonts';
+
+@use '@/scss/components/header';
+@use '@/scss/components/footer';
 
 body {
   background-color: black;
 }
+
