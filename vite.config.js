@@ -1,27 +1,3 @@
-// vite.config.js
-
-// import { defineConfig } from 'vite';
-// import path from 'path';
-// import htmlInclude from 'vite-plugin-html-include';
-
-// export default defineConfig({
-//   server: {
-//     open: true,
-//   },
-
-//   resolve: {
-//     alias: {
-//       '@': path.resolve(__dirname, './src'),
-//     },
-//   },
-
-//  plugins: [
-//     htmlInclude({
-//       root: path.resolve(__dirname, './')
-//     })
-//   ]
-// });
-
 import { defineConfig } from 'vite';
 import path from 'path';
 import handlebars from 'vite-plugin-handlebars';
@@ -29,9 +5,13 @@ import { resolve } from 'path';
 import FullReload from 'vite-plugin-full-reload';
 import { viteStaticCopy } from 'vite-plugin-static-copy';
 import injectHTML from 'vite-plugin-html-inject';
-import { createSvgIconsPlugin } from 'vite-plugin-svg-icons'
+import { createSvgIconsPlugin } from 'vite-plugin-svg-icons';
+import viteImagemin from 'vite-plugin-imagemin';
+
+const baseUrl = process.env.VITE_BASE_URL || '/';
 
 export default defineConfig({
+  base: baseUrl,
   build: {
     target: 'es2022',
     outDir: 'dist',
@@ -44,7 +24,6 @@ export default defineConfig({
     },
   },
 
-  base: '/test/',
   server: {
     port: 3025,
     host: '0.0.0.0',
@@ -58,7 +37,7 @@ export default defineConfig({
       reloadOnPartialChange: true,
       partialDirectory: resolve(__dirname, 'src/html/html-partials'),
       context: {
-        baseUrl: '/force-technologies/',
+        baseUrl: 'baseUrl',
       },
     }),
 
@@ -73,9 +52,19 @@ export default defineConfig({
       ],
     }),
 
-     createSvgIconsPlugin({
+    createSvgIconsPlugin({
       iconDirs: [path.resolve(process.cwd(), 'src/assets/svg')],
       symbolId: 'icon-[name]', // будет id="icon-phone"
+    }),
+
+    viteImagemin({
+      webp: {
+        quality: 75, // настрой качество WebP
+      },
+      gifsicle: false,
+      optipng: false,
+      mozjpeg: false,
+      svgo: false,
     }),
   ],
 });

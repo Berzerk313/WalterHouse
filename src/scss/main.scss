@@ -7,9 +7,15 @@
 @use '@/scss/components/header';
 @use '@/scss/components/footer';
 
-body {
-  background-color: black;
-}
+// body {
+//    background: 
+//     linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+//     url('/src/assets/images/main/439fa95956210c8a48c41d34da6b0c6096b31050.png');
+
+//   background-size: cover;
+//   background-position: center;
+//   background-repeat: no-repeat;
+// }
 
 .header__logo-svg {
   width: 50px;

@@ -1,20 +1,35 @@
 <!doctype html>
 <html lang="en">
   <head>
-
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>walter-house</title>
+    <title>Walter-House</title>
   </head>
-  
-<body>
-  {{> header}}
 
-<svg width="50" height="50">
-  <use href="#icon-telephoneHeader"></use>
-</svg>
+  <body>
+    <div class="wrapper">{{> header}}</div>
+    <div class="page">
+      <div class="bg-wrapper">
+        <!-- <picture>
+          <source srcset="{{baseUrl}}assets/images/main/main-bg.webp" type="image/webp" />
+          <img src="{{baseUrl}}assets/images/main/main-bg.png" alt="bg-img" class="bg-img" />
+        </picture> -->
+         <picture>
+          <!-- <source srcset="/assets/images/main/main-bg.webp" type="image/webp" /> -->
+          <img src="/src/assets/images/main/main-bg.png" alt="bg-img" class="bg-img" />
+        </picture>
+        <div class="content">
+          <!-- <h1>Привет, мир!</h1>
+    <p>Твой контент поверх фона</p> -->
+        </div>
+      </div>
+    </div>
 
-  <script type="module" src="/src/js/main.js"></script>
-</body>
+    <!-- <svg width="50" height="50">
+      <use href="#icon-telephoneHeader"></use>
+    </svg> -->
+
+    <script type="module" src="/src/js/main.js"></script>
+  </body>
 </html>
